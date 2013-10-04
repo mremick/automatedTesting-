@@ -7,6 +7,8 @@
     // Override point for customization after application launch.
     [self customizeAppearance];
     
+    NSLog(@"Checking if Jenkins receives this.");
+    
     return YES;
 }
 							
