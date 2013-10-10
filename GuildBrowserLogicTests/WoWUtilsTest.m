@@ -29,6 +29,21 @@
     
 }
 
+- (void)testRaceLookup
+{
+    XCTAssertEqualObjects(@"Human", [WoWUtils raceFromRaceType:1], @"Race should be human");
+    XCTAssertEqualObjects(@"Orc", [WoWUtils raceFromRaceType:2], @"Race should be Orc");
+    XCTAssertFalse([@"Night Elf" isEqualToString:[WoWUtils raceFromRaceType:45]], @"Should be false");
+    
+    //in real program all races would be tested
+}
+
+- (void)testQualityLoop
+{
+    XCTAssertEqualObjects(@"Grey", [WoWUtils qualityFromQualityType:1], @"Color should be grey");
+    XCTAssertFalse([@"Purple" isEqualToString:[WoWUtils qualityFromQualityType:10]], @"Should be false");
+}
+
 - (void)setUp
 {
     [super setUp];
@@ -41,9 +56,5 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
 
 @end
